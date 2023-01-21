@@ -1,106 +1,173 @@
 body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
 }
+/* parent container styling start   */
 .container{
     display: flex;
-    flex-direction: column;
-    grid-template-columns: 1fr 1fr 1fr;
-    box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.73);
+    gap: 30px;
+    width: 53.6%;
     border-radius: 10px;
-    gap: 10px;
-    width: 50%;
-    padding: 10px;
+    padding: 20px;
+    box-shadow: inset 2px 7px 26px 2px rgba(0,0,0,0.48);
 }
-.top-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    background-color: rgb(236, 234, 230);
-    border-radius: 10px;
+/* parent container styling end  */
+
+.bordered{
+  border: 1px solid black;
+  height: 40px;
+  border-radius: 15px;
 }
-.left{
-    height: 280px;
-}
-.right{
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    gap: 10px;
-    height: 280px;
-}
-.inner-right-1{
-    display: grid;
-    gap: 10px;
-    grid-template-columns: 1fr 1fr;
-}
-.inner-right-2{
-    display: grid;
-    gap: 10px;
-    grid-template-columns: 1fr 1fr;
-}
-.bottom{
-    display: grid;
-    gap: 10px;
-    grid-template-columns: 1fr 1fr;
-    height: 100px;
-    width: 100%;
-}
-.sub-bottom-1{
-    background-color: rgb(236, 234, 230);
-    border-radius: 10px;
-}
-.sub-bottom-2{
-    background-color: rgb(236, 234, 230);
-    border-radius: 10px;
+.input-1{
+  margin-top: 2px;
+  margin-left: 20px;
+  height: 30px;
+  width: 340px;
+  outline: none;
+  border: none;
 }
 
-
-
-/* images styling */
-
-.container .top-container .left img{
-    height: 280px;
-    width: 332px;
-    border-radius: 10px;
-}
-.container .top-container .right .inner-right-1 img{
-    height: 137px;
-    width: 159px;
-    border-radius: 10px;
-}
-.container .top-container .right .inner-right-2 img{
-    height: 125px;
-    width: 157px;
-    border-radius: 10px;
+.sepa{
+  margin-left: -3px;
 }
 
-/* imges styling end */
-
-/* text styling */
-
-p{
-    display: inline;
-    font-size: 18px;
+.ons-input{
+  border: 1px solid black;
+  height: 38px;
+  width: 372px;
+  border-radius: 15px;
 }
-a{
+.ons-input input{
+
+  width: 200px;
+  margin-left: 4px;
+  border: none;
+}
+button{
+  position: absolute;
+  margin-left: 4px;
+  height: 38.1px;
+  width: 100px;
+  border: 1px solid rgb(87, 86, 86);
+  border-radius: 10px;
+}
+
+#lebel-left{
+  margin-left: 10px;
+}
+
+.pad{
+  margin-top: 20px;
+}
+
+textarea{
+  width: 355px;
+  font-size: 20px;
+  outline: none;
+}
+
+/* left container styling start  */
+ 
+.right-side{
+  margin-top: 38px;
+}
+.right-inp{
+  border: 1px solid rgb(56, 56, 56);
+  border-radius: 15px;
+  margin-top: 2px;
+  height: 38px;
+  width: 320px;
+}
+.right-inp i{
+  font-size: 18px;
+  margin-left: 4px;
+  color: rgb(94, 93, 93);
+}
+.right-inp input{
+  width: 280px;
+  height: 30px;
+  margin-top: 3px;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+.increment{
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  margin-top: 40px;
+  border: 1px solid black;
+  height: 38px;
+  width: 150px;
+  border-radius: 15px;
+  font-size: 20px;
+}
+
+.pad input, label{
+  font-size: 20px;
+  color: rgb(100, 100, 100);
+}
+
+/* toggle button  */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
     position: absolute;
-    margin-left: 240px;
-    text-decoration: none;
-    margin-top: 80px;
-    margin-left: -83px;
-    color: black;
-}
-
-
-.bottom .sub-bottom-1 img{
-    height: 100px;
-    width: 332px;
-    border-radius: 10px;
-}
-.bottom .sub-bottom-2 img{
-    height: 100px;
-    width: 332px;
-    border-radius: 10px;
-}
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }

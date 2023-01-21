@@ -1,53 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+
     <link rel="stylesheet" href="style.css">
-    <title>Documents</title>
+    <title>Document</title>
 </head>
+
 <body>
     <div class="container">
-        <div class="heading">
-            <h1>Gallery</h1>
-        </div>
-        <div class="top-container">
-            <div class="left">
-                <img src="images1.jfif" alt="image">
-            </div>
+        <div class="left-side">
 
-            <div class="right">
-                <div class="inner-right-1">
-                    <div class="grid-1">
-                        <img src="images2.jfif" alt="image">
-                    </div>
-                    <div class="grid-2">
-                        <img src="images3.jfif" alt="image">
-                    </div>
-                </div>
-
-                <div class="inner-right-2">
-                    <div class="grid-3">
-                        <img src="images4.jpg" alt="image">
-                    </div>
-                    <div class="grid-4">
-                        <img src="images5.jpg" alt="image">
-                    </div>
+            <div class="pad">
+                <label for="input-text">Test Field *</label>
+                <div class="bordered ">
+                    <input type="text" id="input-text" placeholder="Input Text" class="input-1">
                 </div>
             </div>
-        
+
+            <div class="pad">
+                <label for="number">Select field *</label>
+                <div class="bordered">
+                    <input type="number" id="number" class="input-1" placeholder="Select">
+                </div>
+            </div>
+
+            <div class="pad">
+                <label for="textarea">Text Area *</label>
+                <div >
+                    <textarea name="" id="textarea" cols="40" rows="5" placeholder="Text Here"></textarea>
+                </div>
+            </div>
+
+
+            <div class="pad">
+                <label for="Add-oin">Text Field with Add-ons *</label>
+                <div class="pad1">
+                    <div class="ons-input">
+                        <label for="" id="lebel-left">Label</label>
+                        <input type="text" placeholder="Text input" class="input-1 sepa">
+                        <button type="button">Button</button>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div class="bottom">
-            <div class="sub-bottom-1">
-                <img src="images6.jpg" alt="">
+
+        <div class="right-side">
+            <div class="right-inp">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" placeholder="search" class="i">
             </div>
-            <div class="sub-bottom-2">
-                <img src="images7.jpg" alt="">
-                <a href="index.html">Read More...</a>
+
+            <div class="increment">
+                <span>-</span>
+                <span>1</span>
+                <span>+</span>
             </div>
+
+            <div class="pad">
+                <input type="checkbox" name="1" id="3">
+                <label for="3">CheckBox</label>
+            </div>
+            <div class="pad">
+                <input type="radio" name="1" id="1">
+                <label for="1">Radio Button</label>
+            </div>
+
+            <label class="switch pad">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+            </label>
         </div>
     </div>
 </body>
+
 </html>
