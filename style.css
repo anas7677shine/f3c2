@@ -1,40 +1,78 @@
-.carousel-item img{
-    height: 550px;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: black;
+    font-family: 'Inter', sans-serif;
+}
+.lab{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+label , h1{
+    color: white;
+    font-weight: 100;
+}
+label{
+    margin-right: 30px;
+}
+.container{
+    width: 450px;
+}
+.inp{
+    margin-top: 15px;
+    width: 100%;
+}
+.inp input{
+    width: 70%;
+    padding: 5px;
+    background-color: black;
+    color: white;
+    outline: none;
+    border: 1px solid white;
+}
+input{
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+}
+.ll{
+    margin-left: 23px;
+}
+.ww{
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
 }
 
-.list-group-item a{
-    text-decoration: none;
-    color: rgb(78, 78, 78);
+/* table styling  */
+.tab{
+    margin-top: 50px;
 }
-.list-group-item a:hover{
-    color: rgb(78, 78, 78);
-    cursor: default;
+table{
+    color: white;
 }
-.list{
+th , td{
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+    font-size: 1.5rem; 
+}
+table{
+    width: 100%;
+}
+table, tr ,td ,th{
+    border-collapse: collapse;
+    border: 1px solid white;
+  }
+
+
+
+  .sapa{
     display: flex;
-    column-gap: 20px;
-}
-.list a{
-    color: blue;
-    text-decoration: underline;
-}
-
-tr a{
-    text-decoration: none;
-}
-
-
-@media only screen and (min-width: 768px) and (max-width: 768px){
-    .card-group{
-        display: flex;
-        flex-direction: column;
-    }
-    .card{
-        margin-top: 10px;
-    }
-
-    .tt{
-        margin-top: 20px;
-    }
-}
-
+    justify-content: space-around;
+  }
+  .sapa:hover{
+    cursor: pointer;
+  }
