@@ -1,74 +1,72 @@
-var addDataButton = document.getElementById('jsCreation');
-const collection = document.getElementsByClassName("click");
-var tbody = document.querySelector("tbody");
-var n = 1;
-var statuss = "Not Returned";
 
 
+var arr = [];
+var data = {};
+var n = 0;
 
+var studentName = document.getElementById('name');
+var roll = document.getElementById('roll');
+var subject = document.getElementById('Subject');
+var marks = document.getElementById('marks');
+var email = document.getElementById('email');
 
+console.log();
+var n2 = 1;
 
-function fetchData() {
-    var IssueTo = document.getElementById('Issue').value;
-    var bookName = document.getElementById('BookName').value;
-   
-    const date = new Date();
-    let day = date.getDate();
-    let month = date.getMonth() + 1;
-    let year = date.getFullYear();
+document.getElementById('incre').innerHTML = n2;    
+function storeData() {
+    document.getElementById('incre').innerHTML = n2;    
+    var Student_Name = studentName.value;
+    var student_roll = roll.value;
+    var student_subject = subject.value;
+    var student_marks = marks.value;
+    var student_email = email.value;
+    var email1 = student_email.split('@');
+    var email2 = email1[0];
 
-    let hour = date.getHours();
-    let min = date.getMinutes();
-
-
-
-    tbody.innerHTML += `
-    <tr>
-        <td>${n}</td>
-        <td id ="book">${bookName}</td>
-        <td id ="Is">${IssueTo}</td>
-        <td>${day} - ${month} - ${year} at ${hour}:${min}</td>
-
-
-
-        <td class="sapa">
-        <span style="        
-        text-decoration:none;
-        color:red; 
-        " onclick="alert1()" id="change">${statuss}</span>
-
-        <button" onclick="edit()" id ="red"><i class="fa-solid fa-pen-to-square"></i></button>
-        </td>
-    </tr>`
-
+    n2 += 1;
     n += 1;
+    data = { "ID": n , "Student Name": Student_Name, "Student Roll": student_roll, "Subject": student_subject, "Marks": student_marks, "Marked By": email2 };
 
-    document.getElementById('Issue').value = "";
-    document.getElementById('BookName').value = "";
+    tableData(data);
+    studentName.value = "";
+    roll.value = "";
+    subject.value = "";;
+    marks.value = "";;
+    email.value = "";
+
+
+    document.getElementById('name').style.display = "none"
+    document.getElementById('roll').style.display = "none"
+    document.getElementById('Subject').style.display = "none"
+    document.getElementById('marks').style.display = "none"
+    document.getElementById('email').style.display = "none";
+    document.getElementById('save').style.display = "none";
+    document.getElementById('incre').style.display = "none";
+
 
 }
 
-function alert1(){
-    if(confirm("Are want to return ?")){
-        alert("Your book submitted successfully ");
-        document.getElementById('change').innerHTML = "Returned";
-        document.getElementById('change').style.color = "green";
-    }else{
-        alert("You didn't submitted yet ");
-        document.getElementById('change').innerHTML = "Not Returned";
-        document.getElementById('change').style.color = "red";
-    }
+var p = 1
+function addInfo() {
+    document.getElementById('name').style.display = "block"
+    document.getElementById('roll').style.display = "block"
+    document.getElementById('Subject').style.display = "block"
+    document.getElementById('marks').style.display = "block"
+    document.getElementById('email').style.display = "block";
+    document.getElementById('save').style.display = "block";
+    document.getElementById('incre').style.display = "block";
+
+    p += 1;
+    document.getElementById('incre').innerHTML = p;
 }
 
 
-addDataButton.addEventListener('click', fetchData);
 
-
-function edit(){
-    var book = prompt("Enter book name to update");
-    var name = prompt("Enter book name to update");
-
-    document.getElementById('book').innerHTML = book;
-    document.getElementById('Is').innerHTML = name;
-    
+function tableData(gg) {
+    arr.push(gg)
+    hhhhhhh();
+}
+function hhhhhhh() {
+    console.log(arr);
 }

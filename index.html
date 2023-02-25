@@ -5,54 +5,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>MD ANAS Frontend 25 february 2023</title>
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
 </head>
 
 <body>
-    <div class="lab">
-        <div class="container">
-            <h1>Library Management System</h1>
-            <form action="">
-                <div class="inp">
-                    <label for="">Book Name</label>
-                    <input type="text" name="" id="BookName" required>
-                </div>
-                <div class="inp">
-                    <label for="">Issue To</label>
-                    <input type="text" name="" id="Issue" class="ll" required>
-                </div>
-                <div class="iiii">
-                    <input type="button" value="Issue Book" class="ww" id="jsCreation">
-                </div>
-            </form>
-        </div>
-
-        <div class="cent">
-            <div class="tab">
+    <div class="container">
+        <div class="form_tag">
+            <button type="button" class="btn" onclick="addInfo()">Add A New Row</button>
+            <form>
                 <table>
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Book Name</th>
-                            <th>Issue To</th>
-                            <th>Issue Date and Time</th>
-                            <th>Status</th>
+                            <th>Student Name</th>
+                            <th>Student Roll</th>
+                            <th>Subject</th>
+                            <th>Marks</th>
+                            <th>Marked By</th>
+                            <th>Save</th>
                         </tr>
                     </thead>
-                    
                     <tbody>
-                        
+                        <tr id="tr">
+                            <td id ="incre"></td>
+                            <td><input type="text" id="name"></td>
+                            <td><input type="number" name="" id="roll"></td>
+                            <td><input type="text" name="" id="Subject"></td>
+                            <td><input type="number" name="" id="marks"></td>
+                            <td><input type="email" name="" id="email"></td>
+                            <td><input type="button" value="SAVE" id="save" onclick="storeData()">
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
-            </div>
-            
+            </form>
+
+            <h1 id="h1tag" style="color: red;"></h1>
         </div>
     </div>
-    <!-- <span id ="alert" style="color:red">click me</span> -->
+
+
+
     <script src="script.js"></script>
 </body>
 

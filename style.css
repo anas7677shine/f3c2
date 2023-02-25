@@ -1,78 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-*{
-    padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,900;1,100;1,200;1,500&display=swap');
+
+
+* {
     margin: 0;
-}
-body{
-    background-color: black;
-    font-family: 'Inter', sans-serif;
-}
-.lab{
-    margin-left: 20px;
-    margin-top: 20px;
-}
-label , h1{
-    color: white;
-    font-weight: 100;
-}
-label{
-    margin-right: 30px;
-}
-.container{
-    width: 450px;
-}
-.inp{
-    margin-top: 15px;
-    width: 100%;
-}
-.inp input{
-    width: 70%;
-    padding: 5px;
-    background-color: black;
-    color: white;
-    outline: none;
-    border: 1px solid white;
-}
-input{
-    font-size: 20px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 100;
-}
-.ll{
-    margin-left: 23px;
-}
-.ww{
-    margin-top: 20px;
-    width: 100%;
-    padding: 10px;
+    padding: 0;
 }
 
-/* table styling  */
-.tab{
-    margin-top: 50px;
+.container {
+    width: 80%;
+    margin: 30px auto;
 }
-table{
+
+.form_tag {
+    padding: 30px;
+}
+
+.btn {
+    width: 30%;
+    padding: 10px;
+    background-color: black;
     color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
 }
+
 th , td{
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 100;
     font-size: 1.5rem; 
 }
 table{
+    margin-top: 5%;
     width: 100%;
 }
+
 table, tr ,td ,th{
     border-collapse: collapse;
-    border: 1px solid white;
+    border: 1px solid black;
   }
 
 
+  #save{
+    padding: 5px;
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+  }
+  #tr{
+    text-align: center;
+  }
 
-  .sapa{
-    display: flex;
-    justify-content: space-around;
+  input{
+    font-family: 'Poppins', sans-serif;
+    outline: none;
   }
-  .sapa:hover{
-    cursor: pointer;
-  }
+
