@@ -1,72 +1,73 @@
+var heading = document.getElementById('recipient-name');
+var comment = document.getElementById('message-text');
 
+var time = new Date();
 
-var arr = [];
-var data = {};
-var n = 0;
+let arr = [];
+let gg = {};
+var ss_id = null;
 
-var studentName = document.getElementById('name');
-var roll = document.getElementById('roll');
-var subject = document.getElementById('Subject');
-var marks = document.getElementById('marks');
-var email = document.getElementById('email');
+var Save_changes = "Publish Post";
+console.log(ss_id);
+function submit(){
+    var name = heading.value;
+    var comm = comment.value;
 
-console.log();
-var n2 = 1;
+    if(ss_id!= null){
+        arr.splice(ss_id,1,{head: name, ttt: comm});
+    }else{
+        arr.push({head: name, ttt: comm});
+    }
 
-document.getElementById('incre').innerHTML = n2;    
-function storeData() {
-    document.getElementById('incre').innerHTML = n2;    
-    var Student_Name = studentName.value;
-    var student_roll = roll.value;
-    var student_subject = subject.value;
-    var student_marks = marks.value;
-    var student_email = email.value;
-    var email1 = student_email.split('@');
-    var email2 = email1[0];
+    document.getElementById('cc').innerHTML = Save_changes;
+    display();
 
-    n2 += 1;
-    n += 1;
-    data = { "ID": n , "Student Name": Student_Name, "Student Roll": student_roll, "Subject": student_subject, "Marks": student_marks, "Marked By": email2 };
-
-    tableData(data);
-    studentName.value = "";
-    roll.value = "";
-    subject.value = "";;
-    marks.value = "";;
-    email.value = "";
-
-
-    document.getElementById('name').style.display = "none"
-    document.getElementById('roll').style.display = "none"
-    document.getElementById('Subject').style.display = "none"
-    document.getElementById('marks').style.display = "none"
-    document.getElementById('email').style.display = "none";
-    document.getElementById('save').style.display = "none";
-    document.getElementById('incre').style.display = "none";
-
+    document.getElementById('recipient-name').value = "";
+    document.getElementById('message-text').value = "";
 
 }
 
-var p = 1
-function addInfo() {
-    document.getElementById('name').style.display = "block"
-    document.getElementById('roll').style.display = "block"
-    document.getElementById('Subject').style.display = "block"
-    document.getElementById('marks').style.display = "block"
-    document.getElementById('email').style.display = "block";
-    document.getElementById('save').style.display = "block";
-    document.getElementById('incre').style.display = "block";
+console.log(arr.length);
 
-    p += 1;
-    document.getElementById('incre').innerHTML = p;
+function display(){
+    let stat = "";
+    console.log(arr.length);
+    arr.forEach((hh , i)=>{
+        stat +=`
+    <div class="container mt-5 mm">
+        <h1 class="h2" id="name">${hh.head}</h1>
+        <div class="content" >
+            <p id="content">${hh.ttt}</p>
+        </div>
+        <div class="btn d-flex justify-content-between">
+            <div class="btn-container d-flex">
+            <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="edit_post(${i})">
+            Edit Post
+        </button>
+                <button type="button" class="btn btn-outline-danger ms-5" onclick='deleteh(${i})'>Delete Post</button>
+            </div>
+            <div class="update-container">
+                <p id="update" class="text-white">Last Updated At : ${time.toLocaleString('en-US', { hour: 'numeric', hour12: true }+" : "+time.getMinutes())}</p>
+            </div>
+        </div>
+
+    </div>`;
+    });
+    
+    document.getElementById('connt').innerHTML = stat;
+}
+
+function deleteh(id){
+    arr.splice(id,1);
+    display();
 }
 
 
+function edit_post(id){
+    ss_id = id;
+    document.getElementById('cc').innerHTML = 'Save changes';
+    
+    document.getElementById('recipient-name').value = arr[id].head;
+    document.getElementById('message-text').value = arr[id].ttt;
 
-function tableData(gg) {
-    arr.push(gg)
-    hhhhhhh();
-}
-function hhhhhhh() {
-    console.log(arr);
 }
