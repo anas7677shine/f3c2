@@ -1,73 +1,109 @@
-var heading = document.getElementById('recipient-name');
-var comment = document.getElementById('message-text');
+console.log("fetching data from table");
 
-var time = new Date();
+function showData() {
+    
+    setTimeout(() => {
+        var currentdate = new Date();
+        document.getElementById('t1').innerHTML = currentdate.getHours()+" : " +currentdate.getMinutes() +" : "+ currentdate.getSeconds()
+        fetch("https://dummyjson.com/posts")
+        .then((Response) => Response.json())
+        .then(compaltedata => promiseAPI1(compaltedata))
+    }, 1000);
 
-let arr = [];
-let gg = {};
-var ss_id = null;
+    setTimeout(() => {
+        var currentdate = new Date();
+        document.getElementById('t2').innerHTML = currentdate.getHours()+" : " +currentdate.getMinutes() +" : "+ currentdate.getSeconds()
 
-var Save_changes = "Publish Post";
-console.log(ss_id);
-function submit(){
-    var name = heading.value;
-    var comm = comment.value;
+         fetch("https://dummyjson.com/products")
+        .then((Response) => Response.json())
+        .then(compaltedata => promiseAPI2(compaltedata))
+    }, 2000);
+    setTimeout(() => {
+        // document.getElementById('t3').innerHTML = currentdate.getHours()+" : " +currentdate.getMinutes() +" : "+ currentdate.getSeconds()
 
-    if(ss_id!= null){
-        arr.splice(ss_id,1,{head: name, ttt: comm});
-    }else{
-        arr.push({head: name, ttt: comm});
+         fetch("https://dummyjson.com/todos")
+        .then((Response) => Response.json())
+        .then(compaltedata => promiseAPI3(compaltedata))
+    }, 3000);
+}
+
+function promiseAPI1(data) {
+    let p1 = data.posts;
+
+    let pt1 = ""
+    for (let i = 0; i < p1.length; i++) {
+        // console.log(p1[i].value);
+        pt1 += `
+        <tr>
+            <td scope="row">${p1[i].id}</th>
+            <td>${p1[i].title}</td>
+            <td>${p1[i].body}</td>
+            <td>${p1[i].tags}</td>
+            <td>${p1[i].reactions}</td>
+        </tr>
+        `
+
+        document.getElementById('body1').innerHTML = pt1;
     }
 
-    document.getElementById('cc').innerHTML = Save_changes;
-    display();
 
-    document.getElementById('recipient-name').value = "";
-    document.getElementById('message-text').value = "";
+}
+function promiseAPI2(data) {
+    let p2 = data.products
+
+    // console.log(p);
+
+    let pt2 = ""
+    for (let i = 0; i < p2.length; i++) {
+        // console.log(p[i]);
+        pt2 += `
+        <tr>
+            <td scope="row">${p2[i].id}</th>
+            <td>${p2[i].title}</td>
+            <td>${p2[i].description}</td>
+            <td>${p2[i].price}</td>
+            <td>${p2[i].discountPercentage}</td>
+            <td>${p2[i].stock}</td>
+            <td>${p2[i].brand}</td>
+            <td>${p2[i].category}</td>
+            <td><img src ="${p2[i].thumbnail}"  width="200" height="150"></td>
+            
+            <td>
+                <img src ="${p2[i].images[2]}"  width="200" height="150">
+
+            </td>
+            
+        </tr>
+        `
+
+        document.getElementById('body2').innerHTML = pt2;
+
+    }
+
 
 }
 
-console.log(arr.length);
-
-function display(){
-    let stat = "";
-    console.log(arr.length);
-    arr.forEach((hh , i)=>{
-        stat +=`
-    <div class="container mt-5 mm">
-        <h1 class="h2" id="name">${hh.head}</h1>
-        <div class="content" >
-            <p id="content">${hh.ttt}</p>
-        </div>
-        <div class="btn d-flex justify-content-between">
-            <div class="btn-container d-flex">
-            <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="edit_post(${i})">
-            Edit Post
-        </button>
-                <button type="button" class="btn btn-outline-danger ms-5" onclick='deleteh(${i})'>Delete Post</button>
-            </div>
-            <div class="update-container">
-                <p id="update" class="text-white">Last Updated At : ${time.toLocaleString('en-US', { hour: 'numeric', hour12: true }+" : "+time.getMinutes())}</p>
-            </div>
-        </div>
-
-    </div>`;
-    });
-    
-    document.getElementById('connt').innerHTML = stat;
-}
-
-function deleteh(id){
-    arr.splice(id,1);
-    display();
-}
 
 
-function edit_post(id){
-    ss_id = id;
-    document.getElementById('cc').innerHTML = 'Save changes';
-    
-    document.getElementById('recipient-name').value = arr[id].head;
-    document.getElementById('message-text').value = arr[id].ttt;
+
+function promiseAPI3(data) {
+    let p3 = data.todos
+
+    // console.log(p);
+
+    let pt3 = ""
+    for (let i = 0; i < p3.length; i++) {
+        pt3 += `
+        <tr>
+            <td scope="row">${p3[i].id}</th>
+            <td scope="row">${p3[i].completed}</th>
+            <td>${p3[i].todo}</td>
+            <td>${p3[i].userId}</td>
+        </tr>
+        `
+
+        document.getElementById('body3').innerHTML = pt3;
+    }
+
 
 }
